@@ -1,0 +1,1 @@
+# drawable_mipmap
