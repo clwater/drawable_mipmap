@@ -40,7 +40,14 @@
             android:layout_height="0dp"
             android:paddingTop="10dp"
             android:gravity="center_horizontal"
+            android:orientation="vertical"
             android:layout_weight="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="drawable:"/>
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
