@@ -3,6 +3,11 @@ plugins {
 }
 
 android {
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+
     namespace 'com.clwater.drawable_mipmap'
     compileSdk 33
 
