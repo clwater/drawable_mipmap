@@ -32,12 +32,12 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         DisplayMetrics metric = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getRealMetrics(metric);
-        int width = metric.widthPixels; // 宽度（PX）
-        int height = metric.heightPixels; // 高度（PX）
-        float density = metric.density; // 密度（0.75 / 1.0 / 1.5）
+        int width = metric.widthPixels;
+        int height = metric.heightPixels;
+        float density = metric.density;
         int densityDpi = metric.densityDpi;
 
-        Log.d("gzb", width + " , " + height + " , " + densityDpi);
+        Log.d("clwater.drawable_mipmap", width + " , " + height + " , " + densityDpi);
 
         ViewModel viewModel = new ViewModel();
         viewModel.width = "宽度(width): " + width;
