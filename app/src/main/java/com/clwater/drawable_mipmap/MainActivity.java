@@ -5,12 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.animation.Animation;
+import android.view.animation.ScaleAnimation;
 
 import com.clwater.drawable_mipmap.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
+    Animation animation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +30,12 @@ public class MainActivity extends AppCompatActivity {
         public String density;
         public String densityDpi;
 
+        public void onClick(){
+            binding.ivMain.startAnimation(animation);
+        }
+
     }
+
 
     private void initView() {
         DisplayMetrics metric = new DisplayMetrics();
@@ -47,5 +55,13 @@ public class MainActivity extends AppCompatActivity {
 
         binding.setViewModel(viewModel);
         binding.executePendingBindings();
+
+
+        animation = new ScaleAnimation(0, 5.0f, 0f, 5.0f);
+        animation.setDuration(5000);
+        animation.setRepeatCount(0);
+        animation.setFillAfter(true);
+
+
     }
 }
