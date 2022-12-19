@@ -48,10 +48,19 @@
                 android:layout_height="wrap_content"
                 android:text="drawable:"/>
 
-            <ImageView
-                android:layout_width="wrap_content"
+            <Button
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/image_base"/>
+                android:text="test"
+                android:onClick="@{(view) -> viewModel.onClick()}"
+                />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:id="@+id/iv_main"
+                android:src="@drawable/image_base" />
         </LinearLayout>
 
     </LinearLayout>
