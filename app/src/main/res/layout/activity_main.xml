@@ -46,7 +46,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="drawable:"/>
+                android:text="mipmap  :"/>
 
             <Button
                 android:layout_width="match_parent"
@@ -58,9 +58,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:id="@+id/iv_main"
-                android:src="@drawable/image_base" />
+                android:id="@+id/iv_main" />
         </LinearLayout>
 
     </LinearLayout>

@@ -31,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
         public String densityDpi;
 
         public void onClick(){
-            binding.ivMain.startAnimation(animation);
+            binding.ivMain.setImageResource(R.drawable.image_base);
+//            binding.ivMain.startAnimation(animation);
         }
 
     }
@@ -57,10 +58,10 @@ public class MainActivity extends AppCompatActivity {
         binding.executePendingBindings();
 
 
-        animation = new ScaleAnimation(0, 5.0f, 0f, 5.0f);
-        animation.setDuration(5000);
-        animation.setRepeatCount(0);
-        animation.setFillAfter(true);
+//        animation = new ScaleAnimation(0, 5.0f, 0f, 5.0f);
+//        animation.setDuration(5000);
+//        animation.setRepeatCount(0);
+//        animation.setFillAfter(true);
 
 
     }
