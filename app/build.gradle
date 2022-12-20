@@ -12,7 +12,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.clwater.drawable_mipmap"
+        applicationId "com.clwater.drawable_mipmap_m"
         minSdk 24
         targetSdk 33
         versionCode 1
