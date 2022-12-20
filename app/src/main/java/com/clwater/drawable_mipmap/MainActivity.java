@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.ViewTreeObserver;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
 
@@ -14,9 +15,10 @@ public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
     Animation animation;
-
+    Long createTime;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        createTime = System.currentTimeMillis();
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -56,6 +58,19 @@ public class MainActivity extends AppCompatActivity {
 
         binding.setViewModel(viewModel);
         binding.executePendingBindings();
+
+        binding.ivMain.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+            @Override
+            public boolean onPreDraw() {
+                try {
+                    Log.d("drawable_mipmap_time", "" + (System.currentTimeMillis() - createTime));
+                    return true;
+                } finally {
+                    // Remove listener as further notifications are not needed
+                    binding.ivMain.getViewTreeObserver().removeOnPreDrawListener(this);
+                }
+            }
+        });
 
 
 //        animation = new ScaleAnimation(0, 5.0f, 0f, 5.0f);
